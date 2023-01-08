@@ -1,0 +1,92 @@
+[
+    {
+      id: 1,
+      clientName: "John Smith",
+      clientType: "in-state",
+      date: "2022-01-01",
+      dueDate: "2022-01-07",
+      total: 1000,
+      balance: 500,
+      status: "partial payment"
+    },
+    {
+      id: 2,
+      clientName: "Jane Doe",
+      clientType: "out-state",
+      date: "2022-01-05",
+      dueDate: "2022-01-10",
+      total: 500,
+      balance: 0,
+      status: "paid"
+    },
+    {
+      id: 3,
+      clientName: "William Johnson",
+      clientType: "in-state",
+      date: "2022-01-01",
+      dueDate: "2022-01-15",
+      total: 1500,
+      balance: 1000,
+      status: "partial payment"
+    },
+    {
+      id: 4,
+      clientName: "Carla Williams",
+      clientType: "out-state",
+      date: "2022-01-03",
+      dueDate: "2022-01-08",
+      total: 1000,
+      balance: 500,
+      status: "partial payment"
+    },
+    {
+      id: 5,
+      clientName: "Mike Brown",
+      clientType: "in-state",
+      date: "2022-01-05",
+      dueDate: "2022-01-10",
+      total: 500,
+      balance: 0,
+      status: "paid"
+    },
+    {
+      id: 6,
+      clientName: "Ashley Thompson",
+      clientType: "out-state",
+      date: "2022-01-01",
+      dueDate: "2022-01-15",
+      total: 1500,
+      balance: 1000,
+      status: "partial payment"
+    },
+    {
+      id: 7,
+      clientName: "David Anderson",
+      clientType: "in-state",
+      date: "2022-01-03",
+      dueDate: "2022-01-08",
+      total: 1000,
+      balance: 500,
+      status: "partial payment"
+    },
+    {
+      id: 8,
+      clientName: "Samantha Davis",
+      clientType: "out-state",
+      date: "2022-01-05",
+      dueDate: "2022-01-10",
+      total: 500,
+      balance: 0,
+      status: "paid"
+    },
+    {
+      id: 9,
+      clientName: "James Rodriguez",
+      clientType: "in-state",
+      date: "2022-01-01",
+      dueDate: "2022-01-15",
+      total: 1500,
+      balance: 1000,
+      status: "partial payment"
+    }
+]

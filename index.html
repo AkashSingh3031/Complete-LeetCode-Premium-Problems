@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>All Invoices</title>
+</head>
+
+<body class="font-montserrat ">
+    <div class="flex min-h-screen 2xl:max-w-7xl 2xl:mx-auto 2xl:border-x-2 2xl:border-indigo-50 ">
+
+        <main class="bg-indigo-50/60 w-full py-10 px-3 sm:px-10">
+            <section>
+                <div class="bg-rose-100/70 rounded-xl px-5 sm:px-10  pt-8 pb-4 ">
+                    <div class="text-rose-400 font-semibold text-lg">All Invoices</div>
+
+
+                    <div class="mt-6 grid grid-cols-1 xs:grid-cols-2 gap-y-6  gap-x-6 md:flex md:space-x-6 md:gap-x-0 ">
+                        <div class="flex flex-col  md:w-40  text-gray-600 text-sm space-y-2 font-semibold">
+                            <label for="date">Begin Date</label>
+                            <div class="inline-flex relative">
+                                <input
+                                    class="date-input bg-indigo-800/80 text-white tracking-wider pl-4 pr-10 py-3 rounded-lg appearance-none w-full outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300"
+                                    id="date" name="date" type="date">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:w-40  text-gray-600 text-sm space-y-2 font-semibold">
+                            <label for="due_date">End Date</label>
+                            <div class="inline-flex relative">
+                                <input
+                                    class="date-input bg-indigo-800/50 text-white tracking-wider pl-4 pr-10 py-3 rounded-lg appearance-none w-full outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300"
+                                    id="due_date" name="due_date" type="date">
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col md:w-40  text-gray-600 text-sm space-y-2 font-semibold">
+                            <label for="status">Status</label>
+                            <div class="inline-flex relative">
+                                <select
+                                    class="bg-rose-400 text-white  px-4 py-3 rounded-lg appearance-none w-full outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300"
+                                    id="status" name="status">
+                                    <option value="Any">Any</option>
+                                    <option value="draft">Draft</option>
+                                    <option value="paid">Paid</option>
+                                    <option value="partial-payment">Partial Payment</option>
+                                </select>
+                                <span class="absolute top-0 right-0 m-3 pointer-events-none text-white">
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:w-40 text-gray-600 text-sm space-y-2 font-semibold">
+                            <label for="client">Client</label>
+                            <div class="inline-flex relative">
+                                <select
+                                    class="bg-blue-600/70  text-white  px-4 py-3 rounded-lg appearance-none w-full outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300"
+                                    id="client" name="client">
+                                    <option value="Any">Any</option>
+                                    <option value="in-state">In State</option>
+                                    <option value="out-state">Out State</option>
+                                </select>
+                                <span class="absolute top-0 right-0 m-3 pointer-events-none text-white">
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 text-gray-500 text-sm ">
+                        * This data has been shown according to your given information
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <div class="invoice-table-row invoice-table-header bg-white mt-10 rounded-xl px-10  py-4 flex items-center gap-x-3 text-sm font-semibold  text-gray-600">
+                    <div class="text-left" colName="invoice">Invoice</div>
+                    <div class="text-center" colName="name">Client name</div>
+                    <div class="text-center" colName="date">Date</div>
+                    <div class="text-center " colName="duedate">Due date</div>
+                    <div class="text-center" colName="total">Total</div>
+                    <div class="text-center" colName="balance">Balance</div>
+                    <div class="flex-1 text-center" colName="status">Status</div>
+                </div>
+                
+                <div class="bg-white mt-5 rounded-xl text-sm  text-gray-500 divide-y divide-indigo-50 overflow-x-auto  shadow">
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Paid In-State">1</div>
+                        <div class="text-center text-blue Paid In-State">Akash</div>
+                        <div class="text-center Paid In-State">20-11-2022</div>
+                        <div class="text-center Paid In-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid In-State">$100.00</div>
+                        <div class="text-centert text-red Paid In-State">$100.00</div>
+                        <div class="flex-1 text-center Paid In-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Partial Out-State">2</div>
+                        <div class="text-center text-blue Partial Out-State">Ajay</div>
+                        <div class="text-center Partial Out-State">20-11-2022</div>
+                        <div class="text-center Partial Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Partial Out-State">$200.00</div>
+                        <div class="text-centert text-red Partial Out-State">$160.00</div>
+                        <div class="text-center Partial Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-800/80  text-white">Partial Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Paid In-State">3</div>
+                        <div class="text-center text-blue Paid In-State">Aman</div>
+                        <div class="text-center Paid In-State">20-11-2022</div>
+                        <div class="text-center Paid In-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid In-State">$10.00</div>
+                        <div class="text-centert text-red Paid In-State">$10.00</div>
+                        <div class="flex-1 text-center Paid In-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Draft In-State">4</div>
+                        <div class="text-center text-blue Draft In-State">Shiv</div>
+                        <div class="text-center Draft In-State">20-11-2022</div>
+                        <div class="text-center Draft In-State">20-11-20223</div>
+                        <div class="text-centert text-red Draft In-State">$100.00</div>
+                        <div class="text-centert text-red Draft In-State">$10.00</div>
+                        <div class="flex-1 text-center Draft In-State">
+                            <span class="px-4 py-1 rounded-lg bg-rose-400  text-white">Draft</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Paid Out-State">5</div>
+                        <div class="text-center text-blue Paid Out-State">Shivam</div>
+                        <div class="text-center Paid Out-State">20-11-2022</div>
+                        <div class="text-center Paid Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid Out-State">$50.00</div>
+                        <div class="text-centert text-red Paid Out-State">$50.00</div>
+                        <div class="flex-1 text-center Paid Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Partial In-State">6</div>
+                        <div class="text-center text-blue Partial In-State">Om</div>
+                        <div class="text-center Partial In-State">20-11-2022</div>
+                        <div class="text-center Partial In-State">20-11-20223</div>
+                        <div class="text-centert text-red Partial In-State">$250.00</div>
+                        <div class="text-centert text-red Partial In-State">$100.00</div>
+                        <div class="text-center Partial In-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-800/80  text-white" id="partial-payment">Partial Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Draft Out-State">7</div>
+                        <div class="text-center text-blue Draft Out-State">Hari</div>
+                        <div class="text-center Draft Out-State">20-11-2022</div>
+                        <div class="text-center Draft Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Draft Out-State">$70.00</div>
+                        <div class="text-centert text-red Draft Out-State">$10.00</div>
+                        <div class="flex-1 text-center Draft Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-rose-400  text-white">Draft</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Paid Out-State">8</div>
+                        <div class="text-center text-blue Paid Out-State">Alak</div>
+                        <div class="text-center Paid Out-State">20-11-2022</div>
+                        <div class="text-center Paid Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid Out-State">$90.00</div>
+                        <div class="text-centert text-red Paid Out-State">$90.00</div>
+                        <div class="flex-1 text-center Paid Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Partial Out-State">9</div>
+                        <div class="text-center text-blue Partial Out-State">Priya</div>
+                        <div class="text-center Partial Out-State">20-11-2022</div>
+                        <div class="text-center Partial Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Partial Out-State">$80.00</div>
+                        <div class="text-centert text-red Partial Out-State">$60.00</div>
+                        <div class="text-center Partial Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-800/80  text-white" id="partial-payment">Partial Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Draft In-State">10</div>
+                        <div class="text-center text-blue Draft In-State">Dipak</div>
+                        <div class="text-center Draft In-State">20-11-2022</div>
+                        <div class="text-center Draft In-State">20-11-20223</div>
+                        <div class="text-centert text-red Draft In-State">$100.00</div>
+                        <div class="text-centert text-red Draft In-State">$40.00</div>
+                        <div class="flex-1 text-center Draft In-State">
+                            <span class="px-4 py-1 rounded-lg bg-rose-400  text-white">Draft</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Draft In-State">11</div>
+                        <div class="text-center text-blue Draft In-State">Shyam</div>
+                        <div class="text-center Draft In-State">20-11-2022</div>
+                        <div class="text-center Draft In-State">20-11-20223</div>
+                        <div class="text-centert text-red Draft In-State">$200.00</div>
+                        <div class="text-centert text-red Draft In-State">$70.00</div>
+                        <div class="flex-1 text-center Draft In-State">
+                            <span class="px-4 py-1 rounded-lg bg-rose-400  text-white">Draft</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Partial Out-State">12</div>
+                        <div class="text-center text-blue Partial Out-State">Shita</div>
+                        <div class="text-center Partial Out-State">20-11-2022</div>
+                        <div class="text-center Partial Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Partial Out-State">$400.00</div>
+                        <div class="text-centert text-red Partial Out-State">$300.00</div>
+                        <div class="text-center Partial Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-800/80  text-white" id="partial-payment">Partial Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Paid In-State">13</div>
+                        <div class="text-center text-blue Paid In-State">Abhay</div>
+                        <div class="text-center Paid In-State">20-11-2022</div>
+                        <div class="text-center Paid In-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid In-State">$670.00</div>
+                        <div class="text-centert text-red Paid In-State">$670.00</div>
+                        <div class="flex-1 text-center Paid In-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4">
+                        <div class="text-left text-blue Draft Out-State">14</div>
+                        <div class="text-center text-blue Draft Out-State">Amit</div>
+                        <div class="text-center Draft Out-State">20-11-2022</div>
+                        <div class="text-center Draft Out-State">20-11-20223</div>
+                        <div class="text-centert text-red Draft Out-State">$1032.00</div>
+                        <div class="text-centert text-red Draft Out-State">$500.00</div>
+                        <div class="flex-1 text-center Draft Out-State">
+                            <span class="px-4 py-1 rounded-lg bg-rose-400  text-white">Draft</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-table-row flex items-center gap-x-3 px-10 py-4 bg-indigo-50">
+                        <div class="text-left text-blue Paid In-State">15</div>
+                        <div class="text-center text-blue Paid In-State">Nayan</div>
+                        <div class="text-center Paid In-State">20-11-2022</div>
+                        <div class="text-center Paid In-State">20-11-20223</div>
+                        <div class="text-centert text-red Paid In-State">$590.00</div>
+                        <div class="text-centert text-red Paid In-State">$590.00</div>
+                        <div class="flex-1 text-center Paid In-State">
+                            <span class="px-4 py-1 rounded-lg bg-indigo-400  text-white">Paid</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#status").change(function () {
+                var value = $(this).val();
+                if (value === "Any") {
+                    $(".Draft").show();
+                    $(".Paid").show();
+                    $(".Partial").show();
+                }
+                else if (value === "draft") {
+                    $(".Draft").show();
+                    $(".Paid").hide();
+                    $(".Partial").hide();
+                }
+                else if (value === "paid") {
+                    $(".Draft").hide();
+                    $(".Paid").show();
+                    $(".Partial").hide();
+                }
+                else if (value === "partial-payment") {
+                    $(".Draft").hide();
+                    $(".Paid").hide();
+                    $(".Partial").show();
+                }
+            });
+            $("#client").change(function () {
+                var value = $(this).val();
+                if (value === "Any") {
+                    $(".In-State").show();
+                    $(".Out-State").show();
+                }
+                else if (value === "in-state") {
+                    $(".In-State").show();
+                    $(".Out-State").hide();
+                }
+                else if (value === "out-state") {
+                    $(".In-State").hide();
+                    $(".Out-State").show();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
