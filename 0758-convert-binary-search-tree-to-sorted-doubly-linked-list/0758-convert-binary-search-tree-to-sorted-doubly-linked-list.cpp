@@ -25,22 +25,19 @@ public:
 class Solution {
 public:
     void inorder(Node* n, Node*& prev, Node*& head) {
-        // First node without left children is head
         if (!head && !n->left) {
             head = n;
             prev = n;
         }
         Node * left = n->left;
         Node * right = n->right;
-        // process left
         if (left) inorder(left, prev, head);
-        // current
         prev->right = n;
         n->left = prev;
-        // right
         prev = n;
         if(right) inorder(right, prev, head);
     }
+    
     Node* treeToDoublyList(Node* root) {
         if (!root) return NULL;
         Node* prev = NULL;
